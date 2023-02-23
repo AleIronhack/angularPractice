@@ -1,0 +1,16 @@
+<div class="classList-wrapper">
+    <div class="classList">
+        <h1>List of classes</h1>
+        <app-class-card *ngFor="let class of classList; let i = index" 
+        [class] = "class" 
+        [classIndex] = "i"
+        (deletedClass)="deleteClass($event)"></app-class-card>
+    </div>
+
+    <div class="form">
+        <input type="text" placeholder="Name of the class" [(ngModel)] = "classTitle">
+        <input type="text" placeholder="Short description of the class" [(ngModel)]="classDescription">
+    </div>
+    <button (click)="createClass()">Create class</button>
+</div>
+
